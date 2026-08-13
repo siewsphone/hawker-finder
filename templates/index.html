@@ -1,0 +1,144 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<div class="hero-section">
+  <div class="container">
+    <h1><i class="bi bi-egg-fried me-2"></i>Hawker Finder</h1>
+    <p>Discover NEA-registered hawker centres across Singapore.</p>
+  </div>
+</div>
+
+<div class="container" id="main-content">
+  <div class="search-card">
+    <form id="search-form" onsubmit="event.preventDefault(); performSearch();">
+      <div class="row g-3">
+        <div class="col-12 col-sm-12 col-lg-8">
+          <div class="input-group input-group-lg stall-search-group">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+            <input type="text" class="form-control border-start-0 ps-0" id="stall-search" 
+                   placeholder="Search stall or dish name… e.g. laksa, chicken rice, satay"
+                   autocomplete="off">
+            <button class="btn btn-outline-secondary d-none" type="button" id="clear-stall-search">
+              <i class="bi bi-x-circle"></i>
+            </button>
+          </div>
+          <div id="stall-results" class="stall-results-dropdown d-none"></div>
+        </div>
+        <input type="hidden" id="user-lat">
+        <input type="hidden" id="user-lng">
+        <div class="col-12 col-sm-4 col-lg-2">
+          <select class="form-select form-select-lg" id="filter-district">
+            <option value="">📍 All Areas</option>
+            {% for d in districts %}<option value="{{ d }}">{{ d }}</option>{% endfor %}
+          </select>
+        </div>
+        <div class="col-6 col-sm-3 col-lg-2">
+          <select class="form-select form-select-lg" id="sort-by">
+            <option value="relevance">Sort</option>
+            <option value="name">Name A-Z</option>
+            <option value="stalls">Most Stalls</option>
+            <option value="distance">Nearest</option>
+          </select>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <button type="button" class="btn btn-outline-primary btn-lg w-100" id="loc-btn" title="Use my location">
+            <i class="bi bi-geo-alt-fill"></i> Near Me
+          </button>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <button type="button" class="btn btn-outline-success btn-lg w-100 veg-toggle-btn" id="veg-toggle" title="Show only hawker centres with vegetarian stalls">
+            🌱 Veg
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row mt-4 g-4">
+    <div class="col-lg-12 main-col">
+      <!-- AI Craving Assistant -->
+      <div class="ai-craving-card mb-4 p-4 rounded-3" style="background:linear-gradient(135deg,#fff7ed,#ffe4d6);border:1px solid rgba(230,110,60,0.3);">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span style="font-size:1.6rem;">🤖</span>
+          <h3 class="mb-0" style="font-size:1.25rem;font-weight:700;">AI Craving Assistant</h3>
+          <span class="badge" style="background:linear-gradient(135deg,#e6532f,#ff8a3d);color:#fff;font-size:.65rem;">AI</span>
+        </div>
+        <p class="text-muted mb-3" style="font-size:.9rem;">Describe what you're hungry for and the AI will suggest the best stalls — "spicy wanton mee", "cheap roti prata", "halal briyani"…</p>
+        <div class="d-flex gap-2 flex-wrap align-items-center">
+          <input type="text" id="craving-input" class="form-control form-control-lg flex-grow-1"
+                 placeholder='e.g. "spicy wanton mee near me" or "cheap chicken rice"'
+                 autocomplete="off" style="min-width:220px;">
+          <button type="button" class="btn btn-lg btn-primary" id="craving-btn">
+            <i class="bi bi-stars me-1"></i> Crave
+          </button>
+          <button type="button" class="btn btn-lg btn-outline-dark" id="craving-surprise">
+            🎲 Surprise Me
+          </button>
+        </div>
+        <div id="craving-results" class="mt-3 d-none">
+          <div class="loading-spinner mb-2" style="width:1.5rem;height:1.5rem;"></div>
+          <small class="text-muted">AI is cooking up recommendations…</small>
+        </div>
+      </div>
+
+      <div class="map-wrapper position-relative mb-4">
+        <div id="map"></div>
+        <div id="map-loading" class="position-absolute top-0 start-0 w-100 h-100 align-items-center justify-content-center bg-white rounded-3" style="z-index:1000;display:none;">
+          <div class="text-center">
+            <div class="loading-spinner mb-2" style="width:2rem;height:2rem;"></div>
+            <p class="text-muted mb-0">Loading map...</p>
+          </div>
+        </div>
+        <div id="weather-overlay" class="position-absolute bottom-0 start-0 m-3 px-2 py-1 rounded-2 shadow-sm" style="z-index:1000;display:none;background:rgba(255,255,255,0.92);backdrop-filter:blur(4px);font-size:13px;font-weight:500;gap:6px;align-items:center;border:1px solid rgba(0,0,0,0.06);">
+          <span id="weather-icon"></span>
+          <span id="weather-text" style="color:#333;"></span>
+        </div>
+      </div>
+      <div class="result-header">
+        <p class="result-count mb-0" id="result-count">Loading...</p>
+        <div class="d-flex gap-2 align-items-center flex-wrap">
+          <button id="clear-filters" class="btn btn-sm btn-outline-secondary" title="Clear all filters" style="display:none;">
+            <i class="bi bi-x-circle me-1"></i>Clear
+          </button>
+          <span class="badge bg-success">
+            <i class="bi bi-database me-1"></i>NEA Data — Updated Nov 2025
+          </span>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-3 mb-2 small text-muted">
+        <span><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#E65100;vertical-align:middle;"></span> Hawker centre</span>
+        <span><span style="display:inline-block;width:12px;height:12px;border-radius:8px;background:#455A64;border:2px solid #FFD54F;vertical-align:middle;"></span> Non-hawker food spot</span>
+      </div>
+      <div id="michelin-legend" class="michelin-legend">
+        <img src="/static/img/bib-gourmand-icon.png" alt="BG" class="me-2">
+        <div>
+          <strong>Bib Gourmand</strong> — Michelin-recognised hawker stalls
+          <span class="d-none d-sm-inline">that serve affordable food under S$45.</span>
+          <span id="michelin-count" class="ms-2 badge" style="background:#daa520;color:#fff;font-size:.75rem;">0</span>
+        </div>
+      </div>
+      <div id="veg-legend" class="michelin-legend" title="Filter to hawker centres with vegetarian stalls">
+              <span class="veg-legend-icon" style="font-size:1.1rem;line-height:1;">🌱</span>
+              <div>
+                <strong>Vegetarian</strong> — centres with veg-friendly stalls
+                <span id="veg-count" class="ms-2 badge" style="background:#4caf50;color:#fff;font-size:.75rem;display:inline;">159</span>
+                <span id="veg-filter-state" style="display:none;color:#1b5e20;font-weight:700;font-size:.72rem;">· ON</span>
+              </div>
+            </div>
+      <div id="results" class="d-flex flex-column gap-3"></div>
+    </div>
+  </div>
+
+  <!-- Newsletter section -->
+  <div class="row mt-5 mb-5">
+    <div class="col-12">
+      <div class="card shadow-sm border-0 bg-light">
+        <div class="card-body text-center py-4">
+          <h5 class="card-title mb-2">🍜 Know a great hawker centre we should feature?</h5>
+          <p class="card-text text-muted mb-3">Contributions welcome — <a href="mailto:support@hawkerfinder.com">support@hawkerfinder.com</a></p>
+          <p class="mb-0 text-muted small">NEA data sourced from data.gov.sg. Hawker centres are council-managed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

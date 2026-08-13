@@ -1,0 +1,75 @@
+{
+  "restaurants": [
+    {
+      "name": "Go-Ang Pratunam Chicken Rice",
+      "slug": "go-ang-pratunam-chicken-rice",
+      "cuisine": "Hainanese Chicken Rice",
+      "badges": ["bib_gourmand"],
+      "description": "Bangkok's original Hainanese chicken rice since 1960. Michelin Bib Gourmand. Known for tender poached chicken with fragrant rice and signature chili sauce.",
+      "price_range": "$$",
+      "outlets": [
+        {"address": "50 Jurong Gateway Road #B1-08, JEM", "postal": "608549", "lat": 1.3330, "lng": 103.7435, "hours": "11am-10pm"},
+        {"address": "23 Serangoon Central #B1-05, NEX", "postal": "556083", "lat": 1.3509, "lng": 103.8721, "hours": "11am-10pm"},
+        {"address": "68 Orchard Road #03-24, Plaza Singapura", "postal": "238839", "lat": 1.3009, "lng": 103.8450, "hours": "11am-10pm"},
+        {"address": "1 Harbourfront Walk #B2-30, VivoCity", "postal": "098585", "lat": 1.2648, "lng": 103.8217, "hours": "12pm-10:30pm"},
+        {"address": "18 Cross Street #01-10, Cross Street Exchange", "postal": "048423", "lat": 1.2839, "lng": 103.8470, "hours": "11am-9pm"}
+      ]
+    },
+    {
+      "name": "Tian Tian Hainanese Chicken Rice",
+      "slug": "tian-tian-chicken-rice",
+      "cuisine": "Hainanese Chicken Rice",
+      "badges": ["bib_gourmand", "hawker"],
+      "description": "Arguably Singapore's most famous chicken rice. Michelin Bib Gourmand. Consistently long queues at Maxwell Food Centre.",
+      "price_range": "$",
+      "outlets": [
+        {"address": "1 Kadayanallur Street #01-10/11, Maxwell Food Centre", "postal": "069184", "lat": 1.2805, "lng": 103.8445, "hours": "10am-7:30pm", "closed": ["Sun"]}
+      ],
+      "note": "Already in HawkerFinder under Maxwell Food Centre"
+    },
+    {
+      "name": "Sin Huat Seafood House",
+      "slug": "sin-huat-seafood",
+      "cuisine": "Seafood / Zi Char",
+      "badges": ["bib_gourmand"],
+      "description": "Legendary zi char restaurant known for crab bee hoon and garlic prawns. Featured on Anthony Bourdain's No Reservations.",
+      "price_range": "$$$",
+      "outlets": [
+        {"address": "659 Geylang Road, Lorong 35", "postal": "389589", "lat": 1.3129, "lng": 103.8851, "hours": "5pm-12am"}
+      ]
+    },
+    {
+      "name": "Bismillah Biryani",
+      "slug": "bismillah-biryani",
+      "cuisine": "Indian / Biryani",
+      "badges": ["bib_gourmand"],
+      "description": "Michelin Bib Gourmand dum biryani in Little India. Slow-cooked in sealed pots for maximum flavor.",
+      "price_range": "$$",
+      "outlets": [
+        {"address": "50 Dunlop Street", "postal": "209379", "lat": 1.3050, "lng": 103.8525, "hours": "11:30am-9pm"}
+      ]
+    },
+    {
+      "name": "Jia Xiang Mee Siam 佳香",
+      "slug": "jia-xiang-mee-siam",
+      "cuisine": "Malay / Mee Siam",
+      "badges": ["bib_gourmand"],
+      "description": "New 2026 Bib Gourmand. Rich, tangy mee siam with generous gravy and fresh toppings.",
+      "price_range": "$",
+      "outlets": [
+        {"address": "Blk 58 New Upper Changi Road #01-166", "postal": "461058", "lat": 1.3205, "lng": 103.9305, "hours": "7am-2pm"}
+      ]
+    },
+    {
+      "name": "King of Laksa",
+      "slug": "king-of-laksa",
+      "cuisine": "Laksa",
+      "badges": ["bib_gourmand"],
+      "description": "New 2026 Bib Gourmand. Rich coconut laksa with thick bee hoon and fresh cockles.",
+      "price_range": "$",
+      "outlets": [
+        {"address": "Blk 449 Clementi Avenue 3 #01-243", "postal": "120449", "lat": 1.3139, "lng": 103.7642, "hours": "8am-3pm"}
+      ]
+    }
+  ]
+}

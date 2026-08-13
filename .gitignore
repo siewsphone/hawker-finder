@@ -1,0 +1,25 @@
+# Secrets — never commit
+.env
+.env.*
+!*.example
+
+# Database / cache artifacts
+cache.db
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Recovered / scratch files
+*.recovered
+
+# OS / editor
+.DS_Store
+@eaDir/
+us_stocks_scan.py

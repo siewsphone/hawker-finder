@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+{% block title %}Privacy Policy{% endblock %}
+{% block head %}
+<style>
+  .privacy-page { max-width: 700px; margin: 0 auto; padding: 3rem 1rem; }
+  .privacy-page h1 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+  .privacy-page h2 { font-size: 1.15rem; margin-top: 2rem; color: #555; }
+  .privacy-page p { line-height: 1.7; color: #666; font-size: 0.95rem; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="privacy-page">
+  <h1>Privacy Policy</h1>
+  <p>Last updated: 12 July 2026</p>
+
+  <h2>What we collect</h2>
+  <p>
+    Hawker Finder does <strong>not</strong> collect, store, or transmit any personal data.
+    We do not use cookies, tracking scripts, analytics services, or third-party embeds
+    that collect personal information.
+  </p>
+
+  <h2>Geolocation</h2>
+  <p>
+    When you click "Find my location," your browser asks for permission to access your
+    device's GPS. Your coordinates are used <strong>only</strong> to sort hawker centres
+    by distance and to centre the map on your location. They are processed entirely in
+    your browser and are never sent to our server or any third party beyond the
+    map tile provider (OpenStreetMap) for the sole purpose of displaying the map.
+  </p>
+
+  <h2>External links</h2>
+  <p>
+    This site links to external services such as data.gov.sg, Google Maps, and publisher
+    articles. We are not responsible for the privacy practices of those sites.
+  </p>
+
+  <h2>Data sources</h2>
+  <p>
+    Hawker centre data is sourced from Singapore's Open Data Licence via data.gov.sg
+    (NEA Hawker Centres dataset, Nov 2025). Food stall information is retrieved from
+    publicly available food guides and cached locally — no user data is involved.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    If you have questions, email <a href="mailto:support@hawkerfinder.com">support@hawkerfinder.com</a>.
+  </p>
+
+  <p class="mt-4">
+    <a href="/" class="text-decoration-none">&larr; Back to Hawker Finder</a>
+  </p>
+</div>
+{% endblock %}

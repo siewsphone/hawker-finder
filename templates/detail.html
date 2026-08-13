@@ -1,0 +1,348 @@
+{% extends "layouts/base.html" %}
+{% block title %}{{ centre.name }}{% endblock %}
+{% block content %}
+<div class="container py-4" id="main-content">
+  <div class="d-flex align-items-center gap-3 mb-3">
+    <button onclick="history.back()" class="btn btn-sm btn-outline-secondary" title="Go back">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+    <nav aria-label="breadcrumb" class="mb-0 flex-grow-1">
+      <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="/"><i class="bi bi-house-door"></i> Home</a></li>
+      <li class="breadcrumb-item active">{{ centre.name }}</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+      <div class="detail-hero">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+          <div>
+            <h2 class="mb-2"><i class="bi bi-building me-2"></i>{{ centre.name }}</h2>
+            <p class="mb-2 opacity-75"><i class="bi bi-geo-alt me-1"></i>{{ centre.address }}</p>
+            <div class="d-flex gap-2 flex-wrap align-items-center">
+              {% if centre.status and centre.status != "Existing" %}<span class="badge bg-success">{{ centre.status }}</span>{% endif %}
+              <span class="badge bg-primary">{{ centre.stalls }} cooked food stalls</span>
+              <span class="badge bg-info text-dark">{{ centre.district }}</span>
+              {% if centre.michelin_count > 0 %}
+              <span class="badge" style="background:#daa520;color:#fff;"><img src="/static/img/bib-gourmand-icon.png" style="width:1em;height:.9em;vertical-align:middle;" alt="BG"> {{ centre.michelin_count }} Bib Gourmand</span>
+              {% endif %}
+              {% if sfa and sfa.total > 0 %}
+              <span class="badge" style="background:#d4edda;color:#155724;border:1px solid #28a745;" title="SFA Hygiene: {% for g,c in sfa.grade_counts.items() %}{{g}}:{{c}} {% endfor %}">🛡️ SFA {{ sfa.total }} licences</span>
+              {% endif %}
+              {% if rainfall %}
+              <span class="badge" style="background:#e3f2fd;color:#1565c0;border:1px solid #90caf9;" title="Station: {{ rainfall.station_name }} · {{ rainfall.distance_km }}km away · {{ rainfall.timestamp }}">
+                {% if rainfall.rainfall_mm == 0 %}☀️ Dry{% elif rainfall.rainfall_mm < 2 %}🌦 Light Rain{% elif rainfall.rainfall_mm < 10 %}🌧 Rain{% else %}⛈ Heavy Rain{% endif %}
+                <small style="opacity:0.7;">{{ rainfall.rainfall_mm }}mm · {{ rainfall.distance_km }}km</small>
+              </span>
+              {% endif %}
+            </div>
+          </div>
+          <div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination={{ centre.lat }},{{ centre.lng }}"
+              target="_blank" class="btn btn-light btn-sm">
+              <i class="bi bi-map me-1"></i>Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {% if centre.photo_url %}
+      <div class="card shadow-sm mb-4 overflow-hidden">
+        <img src="{{ centre.photo_url }}" class="card-img-top" alt="{{ centre.name }} exterior" loading="lazy"
+             style="max-height: 400px; object-fit: cover;"
+             onerror="this.style.display='none'">
+      </div>
+      {% endif %}
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h5><i class="bi bi-info-circle me-2 text-primary"></i>Details</h5>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px;">
+                  <i class="bi bi-building text-primary"></i>
+                </div>
+                <div>
+                  <div class="small text-muted">Building</div>
+                  <strong>{{ centre.building or centre.name }}</strong>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px;">
+                  <i class="bi bi-geo-alt text-primary"></i>
+                </div>
+                <div>
+                  <div class="small text-muted">Address</div>
+                  <strong>{{ centre.address }}</strong>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px;">
+                  <i class="bi bi-shop text-primary"></i>
+                </div>
+                <div>
+                  <div class="small text-muted">Cooked Food Stalls</div>
+                  <strong>{{ centre.stalls }}</strong>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px;">
+                  <i class="bi bi-tag text-primary"></i>
+                </div>
+                <div>
+                  <div class="small text-muted">District</div>
+                  <strong>{{ centre.district }}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% if centre.completion_year %}
+          <p class="mt-3 mb-0 text-muted"><small>Est. completion: {{ centre.completion_year }}</small></p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Food Stalls & Reviews (or Under Construction) -->
+      {% if centre.stalls == 0 %}
+      <div class="card shadow-sm mb-4 border-warning">
+        <div class="card-body text-center py-5">
+          <div style="font-size:3rem;margin-bottom:0.5rem;">🚧</div>
+          <h5 class="fw-bold mb-1">Under Construction</h5>
+          <p class="text-muted small mb-0">This hawker centre is not yet operational. No food stall data available from NEA.</p>
+        </div>
+      </div>
+      {% else %}
+      <div class="card shadow-sm mb-4" id="food-stalls-card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <h5 class="mb-0"><i class="bi bi-egg-fried me-2 text-primary"></i>Food Stalls & Reviews</h5>
+            <a href="https://www.google.com/search?q={{ centre.name | urlencode }}+Singapore+food+stalls+reviews" 
+               target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">
+              <i class="bi bi-google me-1"></i>Search Google
+            </a>
+          </div>
+          <div id="food-stalls-results">
+            <div class="text-center py-4">
+              <div class="loading-spinner mx-auto mb-2" style="width:1.5rem;height:1.5rem;"></div>
+              <p class="text-muted small mb-0">Loading stalls...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="col-lg-4">
+      <div class="sidebar-filters">
+        <h6><i class="bi bi-geo me-1"></i> Nearby Centres</h6>
+        {% if nearby %}
+          {% for nc, dist in nearby %}
+            <a href="/centre/{{ nc.id }}" class="result-card mb-2" style="padding:0.75rem 1rem;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="fw-semibold" style="font-size:.9rem;">{{ nc.name }}</div>
+                  <small class="text-muted">{{ nc.stalls }} stalls</small>
+                </div>
+                <small class="distance-badge">{{ dist }} km</small>
+              </div>
+            </a>
+          {% endfor %}
+        {% else %}
+          <p class="text-muted small">No nearby centres within 3km.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(async function() {
+  function imgErr(el) { el.style.display='none'; el.parentElement.classList.add('photo-failed'); }
+  const container = document.getElementById('food-stalls-results');
+  if (!container) return;
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 60000);
+    const resp = await fetch('/api/centre/{{ centre.id }}/food-stalls', { signal: controller.signal });
+    clearTimeout(timeout);
+    const data = await resp.json();
+    
+    let html = '';
+    
+    // Show Bib Gourmand stalls FIRST (from dataset, regardless of scraped match)
+    if (data.michelin_stalls && data.michelin_stalls.length > 0) {
+      html += '<div class=\"mb-3\"><h6 class=\"fw-bold mb-2\" style=\"color:#b8860b;\"><img src=\"/static/img/bib-gourmand-icon.png\" style=\"width:1.1em;height:1em;vertical-align:middle;\" alt=\"BG\"> Bib Gourmand Stalls</h6>';
+      html += '<div class=\"row g-1\">';
+      data.michelin_stalls.forEach(s => {
+        html += `<div class=\"col-12\">
+          <div class=\"stall-badge\" style=\"background:#fff8ec;border-color:#daa520;\">
+            <img src=\"/static/img/bib-gourmand-icon.png\" style=\"width:1em;height:.9em;flex-shrink:0;\" alt=\"BG\">
+            <span><b>${s.name}</b>${s.cuisine ? ' — ' + s.cuisine : ''}</span>
+            ${s.stall ? `<span class=\"badge bg-light text-dark ms-auto\">${s.stall}</span>` : ''}
+          </div>
+        </div>`;
+      });
+      html += '</div>';
+      if (data.stall_article) {
+        html += `<div class=\"mt-2\"><a href=\"${data.stall_article.url}\" target=\"_blank\" class=\"small\" style=\"color:#b8860b;font-weight:600;\">
+          <i class=\"bi bi-newspaper me-1\"></i>${data.stall_article.title} →
+        </a></div>`;
+      }
+      html += '</div>';
+    }
+
+
+    // Show SFA Hygiene Grades
+    if (data.sfa_stalls && data.sfa_stalls.length > 0) {
+      // Only show stalls with a real name — never fall back to the licensee/owner name
+      const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      const cleanStalls = data.sfa_stalls.filter(s => {
+        const n = (s.name || '').trim();
+        return n && !emailRe.test(n);
+      });
+      const foodOnly = cleanStalls.filter(s => s.type && s.type.includes('Foodstall'))
+        .sort((a, b) => (a.name || '').localeCompare(b.name || '', undefined, {numeric: true, sensitivity: 'base'}));
+      const others = cleanStalls.filter(s => s.type && !s.type.includes('Foodstall'));
+      if (foodOnly.length > 0) {
+      html += '<h6 class="fw-bold mb-2 mt-3" style="color:var(--primary);">🛡️ Food Stalls</h6>';
+      html += '<div class="mb-2"><small class="text-muted">Singapore Food Agency · ' + foodOnly.length + ' named stalls</small></div>';
+      html += '<div style="max-height:400px;overflow-y:auto;">';
+      html += '<div class="row g-1">';
+      foodOnly.forEach(s => {
+        const lbl = (s.name || '').toUpperCase();
+        const unit = s.unit ? ` ${s.unit}` : '';
+        const halalTag = s.halal ? '<span class="halal-badge" title="MUIS Halal-Certified">🟢 Halal</span>' : '';
+        const vegTag = s.veg ? '<span class="veg-badge" title="Vegetarian">🌱 Veg</span>' : '';
+        html += `<div class="col-12">
+          <div class="stall-badge" style="font-size:.8rem;padding:5px 8px;">
+            <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${lbl}${unit}</span>
+            ${halalTag}${vegTag}
+          </div>
+        </div>`;
+      });
+      html += '</div></div>';
+      }
+    }
+    
+    // Show food photos if available (deduplicated by URL)
+    if (data.photos && data.photos.length > 0) {
+      // Remove duplicate URLs
+      const seenUrls = new Set();
+      const uniquePhotos = data.photos.filter(p => {
+        const key = p.url.replace(/^https?:/,''); // ignore http vs https
+        if (seenUrls.has(key)) return false;
+        seenUrls.add(key);
+        return true;
+      });
+      if (uniquePhotos.length > 0) {
+      html += '<h6 class="fw-bold mb-2 mt-3" style="color:var(--primary);">\u{0001f4f8} Photo Gallery</h6>';
+      html += '<div class="row g-2 mb-3 justify-content-center">';
+      uniquePhotos.forEach(p => {
+        const imgUrl = p.url;
+        const fallbackUrl = p.original_url || null;
+        html += '<div class="col-4">' +
+          '<a href="' + (fallbackUrl || imgUrl) + '" target="_blank" class="d-block" style="border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:#f5f0eb;">' +
+          '<img src="' + imgUrl + '" data-fallback="' + (fallbackUrl || '') + '" alt="' + (p.alt || 'Food photo') + '" style="width:100%;height:100%;object-fit:cover;">' +
+          '</a></div>';
+      });
+      html += '</div>';
+      }
+    }
+
+
+
+    container.innerHTML = html;
+      container.querySelectorAll('img').forEach(function(img) {
+        img.addEventListener('error', function() {
+          const fb = this.getAttribute('data-fallback');
+          if (fb && this.src !== fb) { this.src = fb; this.removeAttribute('data-fallback'); return; }
+          this.style.display='none'; this.parentElement.classList.add('photo-failed');
+        });
+      });
+  } catch(e) {
+    container.innerHTML = '<div class="text-center py-3"><i class="bi bi-exclamation-triangle text-warning display-6"></i><p class="mt-2 text-muted small">Could not load food stall reviews.</p></div>';
+  }
+})();
+</script>
+<style>
+.photo-failed { display: flex !important; align-items: center; justify-content: center; }
+.photo-failed::after { content: "🍜"; font-size: 1.5rem; }
+.food-stall-item {
+  display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem;
+  background: #fafafa; border-radius: 10px; margin-bottom: 0.5rem;
+  text-decoration: none; color: inherit; transition: background .2s, transform .2s;
+  border: 1px solid #eee; overflow: visible;
+}
+.food-stall-item:hover { background: #fff; transform: translateX(3px); border-color: var(--primary-light); }
+.food-stall-icon { font-size: 1.3rem; margin-top: 1px; flex-shrink: 0; }
+.food-stall-title { font-weight: 600; font-size: .88rem; color: #1a1a1a; margin-bottom: 2px; overflow-wrap: break-word; white-space: nowrap; }
+.food-stall-snippet { font-size: .82rem; color: #666; line-height: 1.5; word-break: break-word; overflow-wrap: anywhere; }
+.food-stall-source { font-size: .7rem; color: #999; margin-top: 2px; }
+.stall-badge {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 0.6rem; background: #fafafa; border-radius: 8px;
+  font-size: .85rem; border: 1px solid #eee;
+  transition: background .2s, transform .2s;
+  overflow-wrap: break-word;
+  width: 100%;
+}
+.stall-badge .stall-name { white-space: nowrap; }
+.stall-badge:hover { background: #fff; transform: translateY(-1px); border-color: var(--primary-light); }
+.stall-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; height: 22px; border-radius: 50%;
+  background: var(--primary); color: #fff; font-size: .7rem; font-weight: 700;
+  flex-shrink: 0;
+}
+.halal-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: .68rem; font-weight: 700; color: #155724;
+  background: #d4edda; border: 1px solid #28a745;
+  border-radius: 10px; padding: 1px 7px; flex-shrink: 0;
+  white-space: nowrap;
+}
+.veg-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: .68rem; font-weight: 700; color: #1b5e20;
+  background: #e8f5e9; border: 1px solid #4caf50;
+  border-radius: 10px; padding: 1px 7px; flex-shrink: 0;
+  white-space: nowrap;
+}
+@media (max-width: 576px) {
+  .stall-badge { font-size: .8rem; padding: 0.35rem 0.5rem; flex-wrap: wrap; overflow: hidden; }
+  .stall-badge > * { min-width: 0; max-width: 100%; }
+  .michelin-badge { margin-left: 0; }
+  .stall-badge .stall-name { white-space: normal; word-break: break-word; }
+  .stall-num { min-width: 20px; height: 20px; font-size: .65rem; }
+  .food-stall-title { font-size: .82rem; white-space: normal; word-break: break-word; }
+  .food-stall-snippet { font-size: .78rem; line-height: 1.4; word-break: break-word; overflow-wrap: break-word; }
+  .food-stall-item { padding: 0.6rem; gap: 0.5rem; overflow: hidden; }
+  .food-stall-item > * { min-width: 0; }
+  .col-4 { width: 50%; } /* photos 2-per-row on mobile */
+  .detail-hero h2 { font-size: 1.15rem; }
+  .detail-hero .btn { font-size: .82rem; padding: 0.4rem 0.75rem; }
+  .container.py-4 { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+  .breadcrumb { font-size: .8rem; }
+  .sidebar-filters { margin-top: 0.5rem; }
+  .sidebar-filters .result-card { padding: 0.6rem 0.75rem !important; }
+  .detail-hero .d-flex.flex-wrap { flex-direction: column; }
+  .col-lg-8 { overflow-x: hidden; }
+  .food-stalls-card .card-body { overflow-x: hidden; }
+  .row.g-4 { overflow-x: hidden; }
+  /* SFA Hygiene grade badges */
+  .grade-badge { display:inline-block;font-size:.7rem;padding:1px 6px;border-radius:10px;font-weight:600;line-height:1.4; }
+  .grade-a, .grade-gold { background:#d4edda;color:#155724;border:1px solid #28a745; }
+  .grade-b, .grade-silver { background:#fff3cd;color:#856404;border:1px solid #ffc107; }
+  .grade-c, .grade-bronze { background:#f8d7da;color:#721c24;border:1px solid #dc3545; }
+  .grade-new { background:#cce5ff;color:#004085;border:1px solid #007bff; }
+}
+</style>
+{% endblock %}

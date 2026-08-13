@@ -1,0 +1,796 @@
+{
+  "banner": "Michelin Bib Gourmand 2026 — 97 eateries, 10 new additions. Affordable Michelin-recognised food under S$45",
+  "stalls": [
+    {
+      "name": "A Noodle Story",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Amoy Street Food Centre"
+    },
+    {
+      "name": "Adam Rd Noo Cheng Big Prawn Noodle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Adam Food Centre"
+    },
+    {
+      "name": "Alliance Seafood",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Newton Food Centre"
+    },
+    {
+      "name": "Anglo Indian (Shenton Way)",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Ar Er Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "ABC Brickworks Market & Food Centre"
+    },
+    {
+      "name": "Bahrakath Mutton Soup Street Food",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Adam Food Centre"
+    },
+    {
+      "name": "Beach Road Fish Head Bee Hoon",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Whampoa Makan Place"
+    },
+    {
+      "name": "Bismillah Biryani",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Little India"
+    },
+    {
+      "name": "Boon Keng Road Fish Head Bee Hoon",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Boon Tong Kee (Balestier Road)",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Chai Chuan Tou Yang Rou Tang",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "115 Bukit Merah View Market & Hawker Centre"
+    },
+    {
+      "name": "Chef Kang's Noodle House",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Lor 3 Toa Payoh"
+    },
+    {
+      "name": "Cheok Kee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Geylang Bahru Market & Food Centre"
+    },
+    {
+      "name": "Chey Sua Carrot Cake",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "127 Toa Payoh West Market & Food Centre"
+    },
+    {
+      "name": "Chuan Kee Boneless Braised Duck",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "20 Ghim Moh Road Market & Food Centre"
+    },
+    {
+      "name": "Cumi Bali",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Da Shi Jia Big Prawn Mee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Delhi Lahori",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Tekka Centre"
+    },
+    {
+      "name": "Dudu Cooked Food",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Jurong West 505 Market & Food Centre"
+    },
+    {
+      "name": "Fei Fei Roasted Noodle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Yuhua Village Market and Food Centre"
+    },
+    {
+      "name": "Fico",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Fu Ming Cooked Food",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Redhill Market"
+    },
+    {
+      "name": "Hai Nan Xing Zhou Beef Noodle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Kim Keat Palm Market & Food Centre"
+    },
+    {
+      "name": "Hai Nan Zai",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Chong Pang Market and Food Centre"
+    },
+    {
+      "name": "Han Kee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Amoy Street Food Centre"
+    },
+    {
+      "name": "Heng",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Newton Food Centre"
+    },
+    {
+      "name": "Heng Heng Cooked Food",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Yuhua Village Market and Food Centre"
+    },
+    {
+      "name": "Heng Kee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Hong Lim Market and Food Centre"
+    },
+    {
+      "name": "Hong Heng Fried Sotong Prawn Mee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Tiong Bahru Market"
+    },
+    {
+      "name": "Hong Kong Yummy Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Alexandra Village Food Centre"
+    },
+    {
+      "name": "Hoo Kee Bak Chang",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Amoy Street Food Centre"
+    },
+    {
+      "name": "Hui Wei Chilli Ban Mian",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Geylang Bahru Market & Food Centre"
+    },
+    {
+      "name": "Hup Kee Fried Oyster Omelette",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Newton Food Centre"
+    },
+    {
+      "name": "Indocafe",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "J2 Famous Crispy Curry Puff",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Amoy Street Food Centre"
+    },
+    {
+      "name": "Jalan Sultan Prawn Mee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Jason Penang Cuisine",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "ABC Brickworks Market & Food Centre"
+    },
+    {
+      "name": "Jia Xiang",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Redhill Market"
+    },
+    {
+      "name": "Ji De Lai Hainanese Chicken Rice",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Chong Pang Market and Food Centre"
+    },
+    {
+      "name": "Ji Ji Noodle House",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Hong Lim Market and Food Centre"
+    },
+    {
+      "name": "Jian Bo Tiong Bahru Shui Kueh",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Jurong West 505 Market & Food Centre"
+    },
+    {
+      "name": "Joo Siah Bak Koot Teh",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Kai Xiang Food Centre"
+    },
+    {
+      "name": "Jungle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Kelantan Kway Chap Pig Organ Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Berseh Food Centre"
+    },
+    {
+      "name": "King of Laksa",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Kitchenman Nasi Lemak",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Koh Brother Pig's Organ Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Tiong Bahru Market"
+    },
+    {
+      "name": "Kok Sen",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Kotuwa",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Kwang Kee Teochew Fish Porridge",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Newton Food Centre"
+    },
+    {
+      "name": "Kwee Heng",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Newton Food Centre"
+    },
+    {
+      "name": "Lagnaa",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Lai Heng Handmade Teochew Kueh",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Yuhua Market & Hawker Centre"
+    },
+    {
+      "name": "Lao Fu Zi Fried Kway Teow",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Old Airport Road Food Centre"
+    },
+    {
+      "name": "Lian He Ben Ji Claypot",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Chinatown Complex Market & Food Centre"
+    },
+    {
+      "name": "Lixin Teochew Fishball Noodles",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Kim Keat Palm Market & Food Centre"
+    },
+    {
+      "name": "Margaret Drive Sin Kee Chicken Rice",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "MP Thai (Vision Exchange)",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Muthu's Curry",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Na Na Curry",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "115 Bukit Merah View Market & Hawker Centre"
+    },
+    {
+      "name": "Nam Sing Hokkien Fried Mee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Old Airport Road Food Centre"
+    },
+    {
+      "name": "New Lucky Claypot Rice",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Holland Drive Market & Food Centre"
+    },
+    {
+      "name": "No.18 Zion Road Fried Kway Teow",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Zion Riverside Food Centre"
+    },
+    {
+      "name": "Outram Park Fried Kway Teow Mee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Hong Lim Market and Food Centre"
+    },
+    {
+      "name": "Rajarani Thosai",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Tampines Round Market & Food Centre"
+    },
+    {
+      "name": "Ru Ji Kitchen",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Holland Drive Market & Food Centre"
+    },
+    {
+      "name": "Selamat Datang Warong Pak Sapari",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Adam Food Centre"
+    },
+    {
+      "name": "Seng Kee Black Chicken Herbal Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Kaki Bukit 511 Market & Food Centre"
+    },
+    {
+      "name": "Sik Bao Sin",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Sin Heng Claypot Bak Koot Teh",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Sin Huat Seafood Restaurant",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Singapore Fried Hokkien Mee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Whampoa Makan Place"
+    },
+    {
+      "name": "Soh Kee Cooked Food",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Song Fa Bak Kut Teh (New Bridge Road)",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Song Fish Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Clementi 448 Market & Food Centre"
+    },
+    {
+      "name": "Song Kee Teochew Fish Porridge",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Newton Food Centre"
+    },
+    {
+      "name": "Spinach Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Geylang Bahru Market & Food Centre"
+    },
+    {
+      "name": "Tai Seng Fish Soup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Taman Jurong Market & Food Centre"
+    },
+    {
+      "name": "Tai Wah Pork Noodle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Hong Lim Market and Food Centre"
+    },
+    {
+      "name": "The Blue Ginger",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "The Coconut Club (Beach Road)",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Tian Nan Xing Minced Pork Noodle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Kaki Bukit 511 Market & Food Centre"
+    },
+    {
+      "name": "Tian Tian Hainanese Chicken Rice",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Maxwell Food Centre"
+    },
+    {
+      "name": "Tiong Bahru Hainanese Boneless Chicken Rice",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Tiong Bahru Market"
+    },
+    {
+      "name": "To-Ricos Kway Chap",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Old Airport Road Food Centre"
+    },
+    {
+      "name": "True Blue Cuisine",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Un-Yang-Kor-Dai",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Whole Earth",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Wok Hei Hor Fun",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Redhill Food Centre"
+    },
+    {
+      "name": "Xiangyee",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Xiu Ji Ikan Bilis Yong Tau Fu",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Chinatown Complex Market & Food Centre"
+    },
+    {
+      "name": "Yhingthai Palace",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Yi Pin Wei Braised Duck Kway Chap",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Tampines Round Market & Food Centre"
+    },
+    {
+      "name": "Yong Chun Wan Ton Noodle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "115 Bukit Merah View Market & Hawker Centre"
+    },
+    {
+      "name": "Zai Shun Curry Fish Head",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    },
+    {
+      "name": "Zhi Wei Xian Zion Road Big Prawn Noodle",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": "Zion Riverside Food Centre"
+    },
+    {
+      "name": "Zhup Zhup",
+      "url": "",
+      "detail_url": "",
+      "source": "bib_gourmand",
+      "scraped_at": "2026-07-29 02:32:00 UTC",
+      "centre": ""
+    }
+  ],
+  "total": 97,
+  "year": 2026,
+  "source": "CNA Lifestyle / Michelin Guide Singapore",
+  "new_additions_2026": [
+    "Boon Keng Road Fish Head Bee Hoon",
+    "Hup Kee Fried Oyster Omelette (Newton Food Centre)",
+    "Jia Xiang (Redhill Market)",
+    "King of Laksa (Aljunied)",
+    "Rajarani Thosai (Tampines)",
+    "Seng Kee Black Chicken Herbal Soup (Kaki Bukit)",
+    "Tian Nan Xing Minced Pork Noodle (Kaki Bukit)",
+    "Xiangyee (Killiney Road)",
+    "Xiu Ji Ikan Bilis Yong Tau Fu (Chinatown Complex)",
+    "Yi Pin Wei Braised Duck Kway Chap (Tampines)"
+  ]
+}
