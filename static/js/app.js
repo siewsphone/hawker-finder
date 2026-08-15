@@ -95,8 +95,20 @@ function initMap(centres, lat, lng) {
     }
     if (!popupOpen) map.removeLayer(markersLayer);
   }
+  // Clustered markers layer — groups nearby centres when zoomed out (declutter)
   if (!markersLayer || !map.hasLayer(markersLayer)) {
-    markersLayer = L.layerGroup().addTo(map);
+    markersLayer = L.markerClusterGroup({
+      maxClusterRadius: 48,
+      showCoverageOnHover: false,
+      spiderfyOnMaxZoom: true,
+      iconCreateFunction: (cluster) => {
+        const count = cluster.getChildCount();
+        return L.divIcon({
+          html: `<div style="background:linear-gradient(135deg,#E65100,#FF833A);color:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 3px 12px rgba(230,81,0,.4);border:2px solid rgba(255,255,255,.7);">${count}</div>`,
+          iconSize: [38, 38], iconAnchor: [19, 19], className: ''
+        });
+      }
+    }).addTo(map);
   }
   // Non-hawker spots layer — render once, persistent
   if (!spotsLayer || !map.hasLayer(spotsLayer)) {

@@ -160,6 +160,9 @@ a:hover { color: var(--primary-dark); }
 
 /* Map Premium */
 #map { height: 520px; border-radius: var(--radius-md); }
+@media (max-width: 576px) {
+  #map { height: 380px; }
+}
 .map-wrapper {
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -542,7 +545,7 @@ footer h6 i { margin-right: 0.4rem; }
   .hero-section { padding: 2rem 0 1.5rem; }
   .search-card { padding: 1rem; border-radius: var(--radius-sm); }
   .result-card .name { font-size: 0.95rem; }
-  #map { height: 320px; }
+  #map { height: 380px; }
   .search-card .row > div { margin-bottom: 0.5rem; }
   .search-card .row > div:last-child { margin-bottom: 0; }
   .form-select-lg { font-size: 0.85rem; padding: 0.35rem 1.5rem 0.35rem 0.5rem; }
@@ -685,3 +688,76 @@ footer h6 i { margin-right: 0.4rem; }
 @media (max-width: 992px) {
   .stall-results-dropdown { position: static; box-shadow: 0 4px 16px rgba(0,0,0,0.08); max-height: 300px; }
 }
+
+/* ── UI Polish v15 ─────────────────────────────────────────────
+   Filter bar: tighten alignment, consistent heights            */
+
+/* Marker clusters: match brand, above map controls */
+.leaflet-marker-icon { transition: transform .15s; }
+.leaflet-marker-icon:hover { transform: scale(1.08); }
+.marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
+  background: transparent;
+}
+.marker-cluster { background: transparent; }
+.marker-cluster div { font-family: 'Inter', system-ui, sans-serif; }
+
+/* Map container: rounded + shadowed (already), give inner radius to tiles */
+.leaflet-container { border-radius: var(--radius-md); font-family: 'Inter', system-ui, sans-serif; }
+
+/* BMC floating button: keep above everything, not clipped */
+iframe[title="Buy Me a Coffee"] {
+  z-index: 9999 !important;
+  right: 18px !important;
+  bottom: 18px !important;
+}
+
+/* Status badges: readable, colorful */
+.badge.bg-secondary { background: #607d8b !important; font-weight: 600; }
+.badge.bg-warning.text-dark { font-weight: 700; color: #4a2c00 !important; }
+.badge.bg-danger { font-weight: 600; }
+
+/* Result count: stronger presence */
+.result-header .result-count { font-size: 1.02rem; font-weight: 700; color: #1a1a1a; }
+.result-header .badge.bg-success { background: #2e7d32 !important; font-weight: 600; letter-spacing: 0.2px; }
+
+/* Thumbnail fallback: intentional placeholder */
+.thumb-fallback {
+  width: 64px; height: 64px; border-radius: 8px; flex-shrink: 0;
+  background: linear-gradient(135deg, #f5f0eb, #e8d5c0);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; border: 1px solid rgba(0,0,0,.04);
+}
+
+/* Result cards: consistent spacing + hover lift already present; add radius */
+.result-card { border-radius: var(--radius-md); }
+
+/* Filter row: align baseline, consistent button heights */
+.search-card .form-select-lg, .search-card .btn-lg { height: 48px; }
+.search-card .btn-lg { display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.search-card .btn-outline-success { border-color: #4caf50; color: #2e7d32; }
+.search-card .btn-outline-success:hover { background: #4caf50; border-color: #4caf50; color: #fff; }
+.search-card .btn-outline-success.active {
+  background: #4caf50; border-color: #4caf50; color: #fff; box-shadow: 0 4px 12px rgba(76,175,80,.3);
+}
+.search-card .btn-outline-primary.active {
+  background: var(--primary); border-color: var(--primary); color: #fff;
+}
+
+/* AI craving card: elevate */
+.ai-craving-card {
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 24px rgba(230,110,60,0.10);
+}
+
+/* Legend chips spacing */
+.michelin-legend { border-radius: 12px; }
+.michelin-legend + .michelin-legend { margin-top: 0.5rem; }
+
+/* Veg legend icon consistent sizing */
+.veg-legend-icon { display: inline-flex; }
+
+/* Weather overlay: subtle, readable */
+#weather-overlay { border-radius: 10px; }
+
+/* "Show more" button */
+.load-more-btn { font-weight: 600; }
